@@ -169,6 +169,89 @@ function getBookRating(bookUrl)
   return n or nil
 end
 
+-- ── Reviews ─────────────────────────────────────────────────────────────
+
+-- Book reviews come from the site's comment API, verified against a real
+-- response from https://freewebnovel.com/api/comments.php
+-- (sample: novel "supreme-sword-exalt", articleid 12787, fetched 2026-11-23).
+-- The article id lives in data-articleid on the book page; chapterid=0 means
+-- book-level comments (reviews), not chapter comments.
+
+local function unescapeHtmlEntities(s)
+  if not s or s == "" then return "" end
+  s = s:gsub("&amp;", "&")
+  s = s:gsub("&lt;", "<")
+  s = s:gsub("&gt;", ">")
+  s = s:gsub("&quot;", '"')
+  s = s:gsub("&#039;", "'")
+  s = s:gsub("&apos;", "'")
+  s = s:gsub("&#(%d+);", function(d)
+    local n = tonumber(d)
+    if n and n < 128 then return string.char(n) end
+    if utf8char then return utf8char(n) end
+    return ""
+  end)
+  s = s:gsub("&#[xX](%x+);", function(h)
+    local n = tonumber(h, 16)
+    if n and n < 128 then return string.char(n) end
+    if utf8char then return utf8char(n) end
+    return ""
+  end)
+  return s
+end
+
+function getBookReviews(bookUrl, index)
+  local page = LIB("catalog").nextIndex(index)
+  local body = fetchPage(bookUrl)
+  if not body then return nil end
+  local articleId = html_attr(body, "[data-articleid]", "data-articleid")
+  if articleId == "" then
+    articleId = body:match('data%-articleid="(%d+)"') or ""
+  end
+  if articleId == "" then return { items = {}, hasNext = false } end
+
+  local postBody = "action=list&articleid=" .. url_encode(articleId)
+    .. "&chapterid=0&order=newest&page=" .. tostring(page) .. "&page_size=20"
+  local r = http_post(baseUrl .. "/api/comments.php", postBody, {
+    headers = {
+      ["Content-Type"]    = "application/x-www-form-urlencoded",
+      ["X-Requested-With"] = "XMLHttpRequest",
+      ["Origin"]          = baseUrl,
+      ["Referer"]         = bookUrl,
+      ["Accept"]          = "application/json",
+    }
+  })
+  if not r.success then
+    log_error("freewebnovel: reviews HTTP " .. tostring(r.code) .. " on " .. bookUrl)
+    return { items = {}, hasNext = false }
+  end
+  local data = json_parse(r.body)
+  if not data or data.code ~= 0 or not data.data then
+    return { items = {}, hasNext = false }
+  end
+  local list = data.data.data_list or {}
+  local items = {}
+  for _, c in ipairs(list) do
+    local content = unescapeHtmlEntities(tostring(c.content or ""))
+    if content ~= "" then
+      local item = {
+        id     = tostring(c.id or ""),
+        author = tostring((c.user_info or {}).nickname or ""),
+        time   = tostring(c.created_at or ""),
+        content = content,
+        likes  = tonumber(c.agree) or 0,
+      }
+      if c.is_spoiler == "1" then item.spoiler = true end
+      if c.child and type(c.child) == "table" and #c.child > 0 then
+        item.replies = #c.child
+      end
+      table.insert(items, item)
+    end
+  end
+  local isEnd = data.data.is_end == true or data.data.is_end == "1" or data.data.is_end == "true"
+  return { items = items, hasNext = (#items > 0 and not isEnd) }
+end
+
 local CHAPTERS_PAGE_SIZE = 200
 
 local function fetchChapterPage(bookUrl, page)
