@@ -177,7 +177,7 @@ local function joinLines(text, sep, skip)
   return table.concat(out, sep)
 end
 
--- NoveLA's os_time() returns MILLISECONDS (System.currentTimeMillis). Be robust anyway: scale seconds
+-- Dreamora's os_time() returns MILLISECONDS (System.currentTimeMillis). Be robust anyway: scale seconds
 -- up and survive app builds without the function. Returns a ms clock or nil when there is none.
 local function clockMs()
   local ok, v = pcall(os_time)
