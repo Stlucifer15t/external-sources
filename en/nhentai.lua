@@ -742,10 +742,38 @@ function getChapterListHash(bookUrl)
   return tostring(data.num_pages or 0) .. "|" .. tostring(data.upload_date or "")
 end
 
--- ── Chapter text (nhentai pages are images; no text) ────────────────────────
+-- ── Chapter pages (nhentai pages are images) ─────────────────────────────
+-- nhentai serves each gallery page as a single full-resolution <img> on the
+-- reader page /g/<gid>/<n>/, e.g.
+--   https://i1.nhentai.net/galleries/<media_id>/<n>.webp
+-- The image host subdomain (i1..i4) is a CDN edge; the exact URL is present
+-- in the reader page HTML, so we extract it directly rather than guessing.
+local IMAGE_HOST = "nhentai.net/galleries/"
+
+local function readerImages(html)
+  local pages = {}
+  for _, img in ipairs(html_select(html, 'img[src*="' .. IMAGE_HOST .. '"]')) do
+    local src = img.src
+    if not src or src == "" then src = img:attr("data-src") end
+    if src and src ~= "" then
+      table.insert(pages, src)
+    end
+  end
+  return pages
+end
+
+function getPageList(html, url)
+  return readerImages(html)
+end
 
 function getChapterText(html, url)
-  return ""
+  local pages = readerImages(html)
+  if #pages == 0 then return "" end
+  local imgs = {}
+  for _, src in ipairs(pages) do
+    table.insert(imgs, '<img src="' .. src .. '">')
+  end
+  return table.concat(imgs, "\n")
 end
 
 -- ── Reviews ─────────────────────────────────────────────────────────────────
