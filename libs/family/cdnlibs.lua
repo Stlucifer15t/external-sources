@@ -25,6 +25,10 @@
 --   ageFilterKey      age filter key of getFilterList: "age" (mangalib) or
 --                     "ageRestriction" (hentailib/ranobelib, default)
 --   descriptionFields query string of getBookDescription
+--   getLang           function() -> "ru" | "en": the reader-URL language
+--                     prefix (baseUrl/<prefix>/<slug>). Defaults to "ru".
+--                     Read at request time so a changed setting takes effect
+--                     without re-running setup().
 --   authDomains       localStorage domains probed for the Bearer token
 --
 -- Hooks (all optional):
@@ -141,6 +145,17 @@ function M.setup(cfg)
     local descFields = cfg.descriptionFields or DETAIL_FIELDS
     local isManga    = mode ~= "novel"
 
+    -- Reader-URL language prefix, e.g. "ru" or "en": baseUrl/<prefix>/<slug>.
+    -- Resolved at request time so a changed preference takes effect without
+    -- re-running setup(). Falls back to "ru" (historical default).
+    local function langPrefix()
+        if type(cfg.getLang) == "function" then
+            local ok, v = pcall(cfg.getLang)
+            if ok and type(v) == "string" and v ~= "" then return v end
+        end
+        return "ru"
+    end
+
     -- The own domain is probed first, then the rest of the family
     -- (all three sites share one auth storage).
     local authDomains = cfg.authDomains
@@ -242,7 +257,7 @@ function M.setup(cfg)
     local function fetchChapter(chapterUrl)
         if not chapterUrl or chapterUrl == "" then return nil, "empty" end
 
-        local slug   = chapterUrl:match("/ru/([^/]+)/read/")
+        local slug   = chapterUrl:match("/%a+/([^/]+)/read/")
         local volume = chapterUrl:match("/v([^/]+)/c")
         local number = chapterUrl:match("/v[^/]+/c([^?]+)")
         local bid    = chapterUrl:match("[?&]bid=([^&]+)")
@@ -407,15 +422,23 @@ function M.setup(cfg)
 
     local function mapItems(parsed, slugFirst)
         local items = {}
+        local lang = langPrefix()
         for _, entry in ipairs(parsed.data) do
-            local title = pickTitle(entry)
+            -- Prefer the title in the reader's chosen language, then fall
+            -- back to the other name, then the default name.
+            local title
+            if lang == "en" then
+                title = entry.eng_name or entry.rus_name or entry.name or ""
+            else
+                title = entry.rus_name or entry.eng_name or entry.name or ""
+            end
             local slug = slugFirst and (entry.slug or entry.slug_url or "")
                 or (entry.slug_url or entry.slug or "")
             local cover = getPath(entry, "cover.default") or ""
             if title ~= "" and slug ~= "" then
                 local item = {
                     title = clean(title),
-                    url   = baseUrl .. "ru/" .. slug,
+                    url   = baseUrl .. langPrefix() .. "/" .. slug,
                     cover = cover,
                 }
                 item.rating = formatRating(getPath(entry, "rating.average"))
@@ -609,11 +632,18 @@ function M.setup(cfg)
             end
             if chapter.bundle_id then isPaid = true end
 
-            local title = "Том " .. volume .. " Глава " .. number
+            local lang = langPrefix()
+            local volLabel, chLabel
+            if lang == "en" then
+                volLabel, chLabel = "Volume ", "Chapter "
+            else
+                volLabel, chLabel = "Том ", "Глава "
+            end
+            local title = volLabel .. volume .. " " .. chLabel .. number
             if name then title = title .. " " .. name end
             if isPaid then title = title .. " 🔒" end
 
-            local chUrl = baseUrl .. "ru/" .. slug .. "/read/v" .. volume .. "/c" .. number
+            local chUrl = baseUrl .. lang .. "/" .. slug .. "/read/v" .. volume .. "/c" .. number
             local sep = "?"
             if bid ~= "0" then chUrl = chUrl .. sep .. "bid=" .. bid; sep = "&" end
             if userId then chUrl = chUrl .. sep .. "ui=" .. userId end
@@ -622,7 +652,7 @@ function M.setup(cfg)
                 result = {
                     title  = clean(title),
                     url    = chUrl,
-                    volume = "Том " .. volume,
+                    volume = volLabel .. volume,
                 },
                 index = chapter.index or #raw + 1,
             }

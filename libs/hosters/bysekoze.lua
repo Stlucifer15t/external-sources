@@ -46,7 +46,7 @@ end
 --    Чистого-Lua решателя здесь НЕТ сознательно: порт gr() на LuaJ даёт
 --    ~150 хэшей/с (замер 2026-10-10; lua CLI — ~540/с), а реальные
 --    решения уходят в 35k..150k итераций — это минуты блокировки вместо
---    секунды на JVM. Оба движка (NoveLA LuaSourceLoader.kt и
+--    секунды на JVM. Оба движка (Dreamora LuaSourceLoader.kt и
 --    plugin-tester) обязаны регистрировать pow_solve. ─────────────────────
 function M.solvePow(nonce, difficulty)
     if type(pow_solve) ~= "function" then
