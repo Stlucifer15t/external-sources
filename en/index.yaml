@@ -76,6 +76,14 @@ sources:
     language: "en"
     content_type: "manga"
     requires: ["catalog"]
+  - id: "nhentai"
+    name: "nhentai"
+    version: "1.0.0"
+    url: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/en/nhentai.lua"
+    icon: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/nhentai.png"
+    language: "en"
+    content_type: "manga"
+    requires: ["fetch", "urls", "catalog", "content", "meta"]
   - id: "lunoxscans"
     name: "Lunox Novels"
     version: "1.0.1"
