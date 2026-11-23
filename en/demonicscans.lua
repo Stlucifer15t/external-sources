@@ -544,7 +544,7 @@ version  = "1.0.0"
 baseUrl  = "https://demonicscans.org"
 language = {"en", "es", "fr"}
 content_type = "manga"
-icon     = "https://raw.githubusercontent.com/Stlucifer15t/external-sources/refs/heads/main/icons/doujinhentai.png"
+icon     = "https://raw.githubusercontent.com/Stlucifer15t/external-sources/refs/heads/main/icons/demonicscans.png"
 
 -- ── Shared libs ─────────────────────────────────────────────────────────────
 
@@ -715,8 +715,9 @@ end
 -- cdn2.demoniclibs.com CDN, e.g.
 --   https://cdn2.demoniclibs.com/<Title>/<chapter>./<N>.jpg
 -- The chapter URL (chaptered.php?manga=<id>&chapter=<n>) redirects to
--- /title/<slug>/chapter/<n>/1; the engine follows redirects by default, so
--- the HTML passed here is the final reader page with all page images.
+-- /title/<slug>/chapter/<n>/1. The engine may pass empty HTML or HTML that
+-- didn't follow the redirect, so when no images are found in the given HTML
+-- we fetch the reader page ourselves (http_get follows redirects by default).
 local CDN_HOST = "cdn2.demoniclibs.com"
 
 local function chapterImages(html)
@@ -731,16 +732,30 @@ local function chapterImages(html)
   return pages
 end
 
+-- Resolve the reader HTML: use the engine-passed html if it has images,
+-- otherwise fetch the chapter URL ourselves.
+local function readerHtml(html, url)
+  local body = html or ""
+  if #chapterImages(body) == 0 and url and url ~= "" then
+    local r = http_get(url)
+    if r and r.success and r.body then
+      body = r.body
+    end
+  end
+  return body
+end
+
 function getPageList(html, url)
-  return chapterImages(html)
+  return chapterImages(readerHtml(html, url))
 end
 
 function getChapterText(html, url)
-  local pages = chapterImages(html)
+  local pages = chapterImages(readerHtml(html, url))
   if #pages == 0 then return "" end
   local imgs = {}
   for _, src in ipairs(pages) do
-    table.insert(imgs, '<img src="' .. src .. '">')
+    -- & → &amp;: the HTML parser decodes attributes when reading <img>
+    table.insert(imgs, '<img src="' .. src:gsub("&", "&amp;") .. '">')
   end
   return table.concat(imgs, "\n")
 end
