@@ -24,6 +24,14 @@ sources:
     language: "en"
     content_type: "manga"
     requires: ["chikari"]
+  - id: "demonicscans"
+    name: "Demonic Scans"
+    version: "1.0.0"
+    url: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/en/demonicscans.lua"
+    icon: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/demonicscans.png"
+    language: "en"
+    content_type: "manga"
+    requires: ["fetch", "urls", "catalog", "content", "meta"]
   - id: "empirenovel"
     name: "Empire Novel"
     version: "2.4.2"
