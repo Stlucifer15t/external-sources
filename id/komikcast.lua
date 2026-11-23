@@ -4,7 +4,7 @@ id       = "komikcast"
 name     = "Komikcast"
 version  = "1.1.0"
 baseUrl  = "https://v1.komikcast.ac/"
-language = "id"
+language = {"id", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/komikcast.webp"
 content_type = "manga"
 

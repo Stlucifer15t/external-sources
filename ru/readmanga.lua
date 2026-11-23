@@ -6,7 +6,7 @@ id       = "readmanga"
 name     = "ReadManga"
 version  = "1.1.0"
 baseUrl  = "https://readmanga.me"
-language = "ru"
+language = {"ru", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/readmanga.png"
 content_type = "manga"
 

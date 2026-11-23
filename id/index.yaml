@@ -1,4 +1,4 @@
-language: "id"
+language: ["id", "en"]
 name: "Indonesian"
 sources:
   - id: "anichin"
@@ -6,7 +6,7 @@ sources:
     version: "1.1.0"
     url: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/id/anichin.lua"
     icon: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/anichin.png"
-    language: "id"
+    language: ["id", "en"]
     content_type: "video"
     requires: ["urls", "okru", "dailymotion", "dood", "dtube", "mirrors", "catalog"]
   - id: "animexin"
@@ -14,7 +14,7 @@ sources:
     version: "1.1.0"
     url: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/id/animexin.lua"
     icon: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/animexin.png"
-    language: "id"
+    language: ["id", "en"]
     content_type: "video"
     requires: ["urls", "okru", "dailymotion", "dood", "seekplayer", "dtube", "gdriveplayer", "rumble", "mirrors", "catalog"]
   - id: "bacakomik"
@@ -22,7 +22,7 @@ sources:
     version: "1.0.0"
     url: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/id/bacakomik.lua"
     icon: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/bacakomik.png"
-    language: "id"
+    language: ["id", "en"]
     content_type: "manga"
     requires: ["catalog"]
   - id: "baca_lightnovel"
@@ -30,14 +30,14 @@ sources:
     version: "1.1.1"
     url: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/id/bacalightnovel.lua"
     icon: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/bacalightnovel.png"
-    language: "id"
+    language: ["id", "en"]
     requires: ["catalog"]
   - id: "doujindesu"
     name: "Doujindesu"
     version: "1.0.1"
     url: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/id/doujindesu.lua"
     icon: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/doujindesu.png"
-    language: "id"
+    language: ["id", "en"]
     content_type: "manga"
     requires: ["catalog"]
   - id: "indowebnovel"
@@ -45,14 +45,14 @@ sources:
     version: "1.1.1"
     url: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/id/indowebnovel.lua"
     icon: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/indowebnovel.png"
-    language: "id"
+    language: ["id", "en"]
     requires: ["catalog"]
   - id: "komikcast"
     name: "Komikcast"
     version: "1.1.0"
     url: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/id/komikcast.lua"
     icon: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/komikcast.webp"
-    language: "id"
+    language: ["id", "en"]
     content_type: "manga"
     requires: ["catalog"]
   - id: "komikdewasa"
@@ -60,7 +60,7 @@ sources:
     version: "1.0.1"
     url: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/id/komikdewasa.lua"
     icon: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/komikdewasa.png"
-    language: "id"
+    language: ["id", "en"]
     content_type: "manga"
     requires: ["urls", "catalog", "fetch"]
   - id: "komiku"
@@ -68,7 +68,7 @@ sources:
     version: "1.0.0"
     url: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/id/komiku.lua"
     icon: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/komiku.png"
-    language: "id"
+    language: ["id", "en"]
     content_type: "manga"
     requires: ["catalog"]
   - id: "meionovels"
@@ -76,13 +76,13 @@ sources:
     version: "1.1.0"
     url: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/id/meionovels.lua"
     icon: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/meionovels.png"
-    language: "id"
+    language: ["id", "en"]
     requires: ["catalog"]
   - id: "voratoon"
     name: "VoraToon"
     version: "1.0.2"
     url: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/id/voratoon.lua"
     icon: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/voratoon.webp"
-    language: "id"
+    language: ["id", "en"]
     content_type: "manga"
     requires: ["catalog"]

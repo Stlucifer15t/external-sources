@@ -2,7 +2,7 @@ id       = "nhentai"
 name     = "nhentai"
 version  = "1.0.0"
 baseUrl  = "https://nhentai.net/"
-language = "en"
+language = {"en", "es", "fr"}
 content_type = "manga"
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/nhentai.png"
 

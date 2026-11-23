@@ -4,7 +4,7 @@ id       = "bacakomik"
 name     = "BacaKomik"
 version  = "1.0.0"
 baseUrl  = "https://bacakomik.my/"
-language = "id"
+language = {"id", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/bacakomik.png"
 content_type = "manga"
 

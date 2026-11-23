@@ -6,7 +6,7 @@ id       = "m440in"
 name     = "M440"
 version  = "1.1.1"
 baseUrl  = "https://m440.in"
-language = "es"
+language = {"es", "en"}
 content_type = "manga"
 icon = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/m440in.png"
 

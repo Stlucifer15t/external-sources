@@ -3,7 +3,7 @@ id       = "novelfrance"
 name     = "NovelFrance"
 version  = "1.0.10"
 baseUrl  = "https://novelfrance.fr"
-language = "fr"
+language = {"fr", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/novelfrance.png"
 
 -- ── Хелперы ──────────────────────────────────────────────────────────────────

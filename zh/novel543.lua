@@ -188,7 +188,7 @@ id       = "novel543"
 name     = "Novel543"
 version  = "1.0.5"
 baseUrl  = "https://www.novel543.com/"
-language = "zh"
+language = {"zh", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/novel543.png"
 
 -- ── Settings preference keys ─────────────────────────────────────────────────

@@ -3,7 +3,7 @@ id       = "piaotia"
 name     = "PiaoTia"
 version = "1.0.3"
 baseUrl  = "https://www.piaotia.com"
-language = "zh"
+language = {"zh", "en"}
 charset  = "GBK"
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/piaotia.png"
 
@@ -254,7 +254,7 @@ end
 -- ── Текст главы ───────────────────────────────────────────────────────────────
 --
 -- Сайт использует document.write() для вставки div#content:
---   <script language="javascript">GetFont();</script>
+--   <script language = {"javascript", "en"}>GetFont();</script>
 -- после которого идёт сам текст главы вне тега.
 --
 -- Решение: заменяем тег скрипта на открывающий <div id="content">,

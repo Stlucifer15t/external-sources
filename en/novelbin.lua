@@ -3,7 +3,7 @@ id        = "NovelBin"
 name      = "Novel Bin"
 version   = "1.1.1"
 baseUrl   = "https://novelbin.com/"
-language  = "en"
+language = {"en", "es", "fr"}
 icon      = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/novelbin.png"
 status    = "dead"
 

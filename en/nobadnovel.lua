@@ -3,7 +3,7 @@ id       = "nobadnovel"
 name     = "NoBadNovel"
 version  = "1.0.2"
 baseUrl  = "https://www.nobadnovel.com/"
-language = "en"
+language = {"en", "es", "fr"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/nobadnovel.png"
 
 -- ── Хелперы ───────────────────────────────────────────────────────────────────

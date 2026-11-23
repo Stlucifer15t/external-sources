@@ -3,7 +3,7 @@ id       = "ixdzs8"
 name     = "iXdzs8"
 version  = "1.0.3"
 baseUrl  = "https://www.ixdzs8.com/"
-language = "zh"
+language = {"zh", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/ixdzs8.png"
 
 -- ── Changelog (1.0.0 → 1.0.1) ───────────────────────────────────────────────

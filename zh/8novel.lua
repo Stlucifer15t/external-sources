@@ -3,7 +3,7 @@ id       = "8novel"
 name     = "8novel 無限輕小說"
 version  = "1.0.0"
 baseUrl  = "https://www.8novel.com"
-language = "zh"
+language = {"zh", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/8novel.png"
 
 -- Traditional Chinese web and light novels on 8novel.com: curated lists,

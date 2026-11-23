@@ -2,7 +2,7 @@ id       = "wuxiabox"
 name     = "WuxiaBox"
 version  = "1.0.2"
 baseUrl  = "https://www.wuxiabox.com/"
-language = "en"
+language = {"en", "es", "fr"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/wuxiabox.png"
 
 -- ── Хелперы ──

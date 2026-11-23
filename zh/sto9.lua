@@ -3,7 +3,7 @@ id       = "sto9"
 name     = "Sto9"
 version = "1.0.7"
 baseUrl  = "https://sto9.com/"
-language = "zh"
+language = {"zh", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/sto9.png"
 
 -- ── Хелперы ───────────────────────────────────────────────────────────────────

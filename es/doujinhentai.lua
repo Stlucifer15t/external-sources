@@ -6,7 +6,7 @@ name = "DoujinHentai"
 version = "1.0.2"
 baseUrl = "https://doujinhentai.net/"
 icon = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/doujinhentai.png"
-language = "es"
+language = {"es", "en"}
 content_type = "manga"
 
 -- ── Хелперы ──

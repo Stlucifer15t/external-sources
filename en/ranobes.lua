@@ -26,7 +26,7 @@ id       = "ranobes"
 name     = "Ranobes"
 version  = "1.1.1"
 baseUrl  = "https://ranobes.net"
-language = "en"
+language = {"en", "es", "fr"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/main/icons/ranobes.png"
 
 -- Marcadores del "Security check" propio del sitio (la app los usa para activar su verificación en WebView)

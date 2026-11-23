@@ -1,4 +1,4 @@
-language: "Mtl"
+language: ["Mtl", "en"]
 name: "Mtl"
 sources:
   - id: "ranovel"
@@ -6,26 +6,26 @@ sources:
     version: "1.0.1"
     url: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/mtl/ranovel.lua"
     icon: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/ranovel.png"
-    language: "Mtl"
+    language: ["Mtl", "en"]
     requires: ["urls", "fetch", "catalog", "meta"]
   - id: "sonicmtl"
     name: "Sonic MTL"
     version: "1.8.2"
     url: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/mtl/sonicmtl.lua"
     icon: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/sonicmtl.png"
-    language: "Mtl"
+    language: ["Mtl", "en"]
     requires: ["urls", "content", "fetch", "catalog", "meta"]
   - id: "tomatomtl"
     name: "TomatoMTL"
     version: "1.1.1"
     url: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/mtl/tomatomtl.lua"
     icon: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/tomatomtl.png"
-    language: "Mtl"
+    language: ["Mtl", "en"]
     requires: ["fetch", "meta"]
   - id: "wtrlab"
     name: "WTR-LAB"
     version: "1.2.1"
     url: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/mtl/wtrlab.lua"
     icon: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/wtr-lab.png"
-    language: "Mtl"
+    language: ["Mtl", "en"]
     requires: ["urls", "fetch", "catalog", "meta"]

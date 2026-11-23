@@ -2,7 +2,7 @@ id       = "novelnice"
 name     = "NovelNice"
 version  = "1.4.5"
 baseUrl  = "https://novelnice.com/"
-language = "en"
+language = {"en", "es", "fr"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/novelnice.png"
 
 -- ── Хелперы ───────────────────────────────────────────────────────────────────

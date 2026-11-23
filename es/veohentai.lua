@@ -22,7 +22,7 @@ id           = "veohentai"
 name         = "Veohentai"
 version      = "1.0.2"
 baseUrl      = "https://veohentai.com"
-language     = "es"
+language = {"es", "en"}
 content_type = "video"
 icon         = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/veohentai.png"
 

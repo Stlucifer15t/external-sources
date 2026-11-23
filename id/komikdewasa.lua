@@ -4,7 +4,7 @@ id       = "komikdewasa"
 name     = "Komik Dewasa"
 version  = "1.0.1"
 baseUrl  = "https://komikdewasa.art/"
-language = "id"
+language = {"id", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/komikdewasa.png"
 content_type = "manga"
 

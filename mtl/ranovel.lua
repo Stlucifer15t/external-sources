@@ -11,7 +11,7 @@ id       = "ranovel"
 name     = "Ranovel"
 version  = "1.0.1"
 baseUrl  = "https://ranovel.com"
-language = "Mtl"
+language = {"Mtl", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/main/icons/ranovel.png"
 
 -- ── Hélpers ───────────────────────────────────────────────────────────────────

@@ -6,7 +6,7 @@ id       = "selfmanga"
 name     = "SelfManga"
 version  = "1.1.0"
 baseUrl  = "https://1.selfmanga.live"
-language = "ru"
+language = {"ru", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/readmanga.png"
 content_type = "manga"
 

@@ -3,7 +3,7 @@ id       = "twkan"
 name     = "TWKan"
 version  = "1.0.2"
 baseUrl  = "https://twkan.com/"
-language = "zh"
+language = {"zh", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/twkan.png"
 
 -- ── Хелперы ───────────────────────────────────────────────────────────────────

@@ -5,7 +5,7 @@ id = "wtrlab"
 name = "WTR-LAB"
 version = "1.2.1"
 baseUrl = "https://wtr-lab.com/"
-language = "MTL"
+language = {"MTL", "en"}
 icon = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/wtr-lab.png"
 description = "Machine-translated novels (wtr-lab.com). AI, raw (web), and Web+ translation modes, full novel-finder filters. If a 'Security Check' error appears, open any chapter of the book in the integrated browser, complete the verification, then retry."
 
@@ -1414,7 +1414,7 @@ end
 local function fetchChapterJson(novelId, chapterNo, chapterUrl, translateParam)
     local requestBody = json_stringify({
         translate = translateParam,
-        language = "none",
+        language = {"none", "en"},
         raw_id = novelId,
         chapter_no = chapterNo,
         retry = false,

@@ -6,7 +6,7 @@ id           = "animephoenix"
 name         = "Anime Phoenix"
 version      = "1.1.1"
 baseUrl      = "https://anime-phoenix.com"
-language     = "ar"
+language = {"ar", "en"}
 icon         = "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/main/icons/animephoenix.png"
 
 local floor = math.floor

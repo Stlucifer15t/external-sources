@@ -6,7 +6,7 @@ id       = "hentailib"
 name     = "HentaiLib"
 version  = "1.1.0"
 baseUrl  = "https://hentailib.me/"
-language = "ru"
+language = {"ru", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/hentailib.png"
 content_type = "manga"
 

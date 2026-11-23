@@ -2,7 +2,7 @@ id       = "rewayatclub"
 name     = "Rewayat Club"
 version  = "1.0.1"
 baseUrl  = "https://api.rewayat.club/"
-language = "ar"
+language = {"ar", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/rewayatclub.png"
 
 -- Сайт работает через отдельный DRF JSON API (https://api.rewayat.club).

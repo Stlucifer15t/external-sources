@@ -6,7 +6,7 @@ id           = "hianimes"
 name         = "Hianime"
 version      = "1.1.0"
 baseUrl      = "https://hianimes.se"
-language     = "en"
+language = {"en", "es", "fr"}
 content_type = "video"
 icon         = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/hianimes.png"
 

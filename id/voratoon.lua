@@ -2,7 +2,7 @@ id       = "voratoon"
 name     = "VoraToon"
 version  = "1.0.2"
 baseUrl  = "https://v5.voratoon.com/"
-language = "id"
+language = {"id", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/voratoon.webp"
 content_type = "manga"
 

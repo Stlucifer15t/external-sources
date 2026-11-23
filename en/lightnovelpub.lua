@@ -2,7 +2,7 @@ id       = "lightnovelpub"
 name     = "LightNovelPub"
 version  = "1.0.3"
 baseUrl  = "https://lightnovelpub.org"
-language = "en"
+language = {"en", "es", "fr"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/lightnovelpub.png"
 status   = "dead"
 

@@ -3,7 +3,7 @@ id           = "chikari_manga"
 name         = "Chikari Manga"
 version      = "1.0.0"
 baseUrl      = "https://chikari.moe/"
-language     = "en"
+language = {"en", "es", "fr"}
 content_type = "manga"
 icon         = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/chikari.png"
 

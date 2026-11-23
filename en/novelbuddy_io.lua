@@ -3,7 +3,7 @@ id       = "novelbuddy"
 name     = "NovelBuddy"
 version  = "3.0.4"
 baseUrl  = "https://novelbuddy.me"
-language = "en"
+language = {"en", "es", "fr"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/novelbuddy.png"
 
 -- Отключаем детект turnstile — сайт его использует в обычном контенте

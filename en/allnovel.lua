@@ -3,7 +3,7 @@ id       = "allnovel"
 name     = "AllNovel"
 version  = "1.0.7"
 baseUrl  = "https://allnovel.org/"
-language = "en"
+language = {"en", "es", "fr"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/allnovel.png"
 -- status = "dead"  -- домен allnovel.org мёртв: редиректит на novelfull.com,
 --                    который покрыт отдельным плагином en/novelfull.lua

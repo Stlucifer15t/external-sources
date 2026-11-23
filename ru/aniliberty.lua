@@ -7,7 +7,7 @@ id          = "aniliberty"
 name        = "AniLiberty"
 version     = "1.0.1"
 baseUrl     = "https://aniliberty.top"
-language    = "ru"
+language = {"ru", "en"}
 icon        = "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/main/icons/aniliberty.png"
 
 local API = baseUrl .. "/api/v1"

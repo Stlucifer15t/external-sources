@@ -6,7 +6,7 @@ id           = "hentaila"
 name         = "Hentaila"
 version      = "1.1.1"
 baseUrl      = "https://hentaila.com"
-language     = "es"
+language = {"es", "en"}
 content_type = "video"
 icon         = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/hentaila.png"
 
@@ -30,7 +30,7 @@ local FETCH = tryLib("fetch")
 local URLS = tryLib("urls")
 local CATLIB = tryLib("catalog")
 
--- User-facing strings stay in Spanish (plugin language = "es"), like
+-- User-facing strings stay in Spanish (plugin language = {"es", "en"}), like
 -- es/latanime.lua. show_error is async in production, hence error(..., 0).
 local function ensureLibs()
     if not HAS_LIBS then

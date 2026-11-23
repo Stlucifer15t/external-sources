@@ -3,7 +3,7 @@ id           = "mangakakalot"
 name         = "MangaKakalot"
 version      = "1.0.2"
 baseUrl      = "https://www.mangakakalot.gg"
-language     = "en"
+language = {"en", "es", "fr"}
 icon         = "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/main/icons/mangakakalot.png"
 content_type = "manga"
 

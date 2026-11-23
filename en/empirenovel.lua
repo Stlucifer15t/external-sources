@@ -3,7 +3,7 @@ id       = "empirenovel"
 name     = "Empire Novel"
 version  = "2.4.2"
 baseUrl  = "https://www.empirenovel.com/"
-language = "en"
+language = {"en", "es", "fr"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/empirenovel.png"
 
 -- ── Хелперы ───────────────────────────────────────────────────────────────────

@@ -12,7 +12,7 @@ id           = "anime3rb"
 name         = "Anime3rb"
 version      = "1.1.1"
 baseUrl      = "https://anime3rb.com"
-language     = "ar"
+language = {"ar", "en"}
 icon         = "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/main/icons/anime3rb.png"
 
 -- Old builds ship no require_lib: keep the plugin loadable (a top-level

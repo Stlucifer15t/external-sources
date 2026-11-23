@@ -2,7 +2,7 @@ id       = "desu"
 name     = "Desu"
 version  = "1.1.4"
 baseUrl  = "https://desu.uno/"
-language = "ru"
+language = {"ru", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/desu.png"
 content_type = "manga"
 

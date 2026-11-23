@@ -4,7 +4,7 @@ id       = "komiku"
 name     = "Komiku"
 version  = "1.0.0"
 baseUrl  = "https://komiku.org/"
-language = "id"
+language = {"id", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/komiku.png"
 content_type = "manga"
 

@@ -3,7 +3,7 @@ id       = "xsw"
 name     = "台灣小說網"
 version  = "1.0.0"
 baseUrl  = "https://www.xsw.tw"
-language = "zh"
+language = {"zh", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/xsw.png"
 
 -- The site runs two hosts with different jobs:

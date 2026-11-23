@@ -6,7 +6,7 @@ id       = "seimanga"
 name     = "SeiManga"
 version  = "1.1.0"
 baseUrl  = "https://1.seimanga.me"
-language = "ru"
+language = {"ru", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/readmanga.png"
 content_type = "manga"
 

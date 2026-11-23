@@ -7,7 +7,7 @@ id       = "ranobelib"
 name     = "RanobeLib"
 version  = "1.1.0"
 baseUrl  = "https://ranobelib.me/"
-language = "ru"
+language = {"ru", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/ranobelib.png"
 
 local function normalizeCover(raw)

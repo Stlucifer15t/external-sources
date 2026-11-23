@@ -7,7 +7,7 @@ id           = "animexin"
 name         = "Animexin"
 version      = "1.1.0"
 baseUrl      = "https://animexin.dev"
-language     = "id"
+language = {"id", "en"}
 content_type = "video"
 icon         = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/animexin.png"
 

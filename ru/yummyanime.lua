@@ -9,7 +9,7 @@ id          = "yummyanime"
 name        = "YummyAnime"
 version     = "1.1.1"
 baseUrl     = "https://ru.yummyani.me"
-language    = "ru"
+language = {"ru", "en"}
 icon        = "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/main/icons/yummyanime.png"
 
 -- ── GUARD: старые сборки приложения без require_lib/либ и base64_decode ──

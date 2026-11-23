@@ -12,7 +12,7 @@ id       = "kolnovel"
 name     = "KOLNOVEL"
 version  = "1.0.1"
 baseUrl  = "https://kolnovel.com"
-language = "ar"
+language = {"ar", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/main/icons/kolnovel.png"
 
 -- ── Хелперы ───────────────────────────────────────────────────────────────

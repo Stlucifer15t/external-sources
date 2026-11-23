@@ -3,7 +3,7 @@ id       = "ifreedom"
 name     = "iFreedom"
 version  = "1.1.7"
 baseUrl  = "https://ifreedom.su/"
-language = "ru"
+language = {"ru", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/ifreedom.png"
 
 -- ── Хелперы ───────────────────────────────────────────────────────────────────

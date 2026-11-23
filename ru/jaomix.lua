@@ -3,7 +3,7 @@ id       = "jaomix"
 name     = "Jaomix"
 version  = "1.0.6"
 baseUrl  = "https://jaomix.ru/"
-language = "ru"
+language = {"ru", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/jaomix.png"
 
 -- ── Хелперы ───────────────────────────────────────────────────────────────────

@@ -9,7 +9,7 @@ id       = "kakuyomu"
 name     = "カクヨム (Kakuyomu)"
 version  = "1.0.1"
 baseUrl  = "https://kakuyomu.jp/"
-language = "ja"
+language = {"ja", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/kakuyomu.png"
 
 -- Old builds ship no require_lib: keep the plugin loadable (a top-level error

@@ -1,4 +1,4 @@
-language: "fr"
+language: ["fr", "en"]
 name: "Fr"
 sources:
   - id: "novelfrance"
@@ -6,5 +6,5 @@ sources:
     version: "1.0.10"
     url: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/fr/novelfrance.lua"
     icon: "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/novelfrance.png"
-    language: "fr"
+    language: ["fr", "en"]
     requires: ["urls", "catalog"]

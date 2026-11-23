@@ -3,7 +3,7 @@ id       = "syosetu"
 name     = "Syosetu"
 version  = "1.1.2"
 baseUrl  = "https://ncode.syosetu.com/"
-language = "ja"
+language = {"ja", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/narou.png"
 
 local HEADERS = {

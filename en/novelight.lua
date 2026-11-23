@@ -3,7 +3,7 @@ id       = "novelight"
 name     = "Novelight"
 version  = "1.0.10"
 baseUrl  = "https://novelight.net/"
-language = "en"
+language = {"en", "es", "fr"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/novelight.png"
 
 -- ── Helpers ─────────────────────────────────────────────────────────────────

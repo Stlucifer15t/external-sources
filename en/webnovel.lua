@@ -3,7 +3,7 @@ id       = "webnovel"
 name     = "WebNovel"
 version  = "2.0.2"
 baseUrl  = "https://www.webnovel.com/"
-language = "en"
+language = {"en", "es", "fr"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/webnovel.png"
 
 function getUserAgentPreset()

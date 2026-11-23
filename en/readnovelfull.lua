@@ -3,7 +3,7 @@ id       = "read_novel_full"
 name     = "ReadNovelFull"
 version  = "1.1.2"
 baseUrl  = "https://readnovelfull.com/"
-language = "en"
+language = {"en", "es", "fr"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/readnovelfull.png"
 
 -- ── Хелперы ───────────────────────────────────────────────────────────────────

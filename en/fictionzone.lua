@@ -3,7 +3,7 @@ id       = "fictionzone"
 name     = "Fiction Zone"
 version  = "1.1.1"
 baseUrl  = "https://fictionzone.net/"
-language = "en"
+language = {"en", "es", "fr"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/fictionzone.png"
 
 -- ── Хелперы ──

@@ -11,7 +11,7 @@ id           = "hitomi"
 name         = "Hitomi"
 version  = "1.15.1"
 baseUrl      = "https://hitomi.la/"
-language     = "en"
+language = {"en", "es", "fr"}
 content_type = "manga"
 icon         = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/hitomi.png"
 

@@ -11,7 +11,7 @@ id           = "anichin"
 name         = "Anichin"
 version      = "1.1.0"
 baseUrl      = "https://anichin.moe"
-language     = "id"
+language = {"id", "en"}
 content_type = "video"
 -- Иконка — favicon сайта (проверен 200): она квадратная (150x150),
 -- в отличие от логотипа 270x50.

@@ -3,7 +3,7 @@ id       = "indowebnovel"
 name     = "Indowebnovel"
 version  = "1.1.1"
 baseUrl  = "https://indowebnovel.id/"
-language = "id"
+language = {"id", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/indowebnovel.png"
 
 -- ── Guard: old app builds without require_lib ────────────────────────────────

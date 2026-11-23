@@ -6,7 +6,7 @@ id       = "senkognito"
 name     = "Senkognito"
 version  = "1.1.0"
 baseUrl  = "https://senkognito.com/"
-language = "ru"
+language = {"ru", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/senkognito.png"
 content_type = "manga"
 

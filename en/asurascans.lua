@@ -3,7 +3,7 @@ name     = "Asura Scans"
 -- Version: 1.7.2
 version  = "1.7.2"
 baseUrl  = "https://asurascans.com"
-language = "en"
+language = {"en", "es", "fr"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/asurascans.webp"
 content_type = "manga"
 

@@ -6,7 +6,7 @@ id       = "mangalib"
 name     = "MangaLib"
 version  = "1.1.0"
 baseUrl  = "https://mangalib.me/"
-language = "ru"
+language = {"ru", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/mangalib.png"
 content_type = "manga"
 

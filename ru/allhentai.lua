@@ -6,7 +6,7 @@ id       = "allhentai"
 name     = "AllHentai"
 version  = "1.1.0"
 baseUrl  = "https://20.allhen.online"
-language = "ru"
+language = {"ru", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/allhentai.png"
 content_type = "manga"
 

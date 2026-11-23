@@ -7,7 +7,7 @@ id = "tomatomtl"
 name = "TomatoMTL"
 version = "1.1.1"
 baseUrl = "https://tomatomtl.com"
-language = "MTL"
+language = {"MTL", "en"}
 icon = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/tomatomtl.png"
 
 -- GUARD: old app builds without the engine APIs (base64_decode_bytes/aes_decrypt).

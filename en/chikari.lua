@@ -3,7 +3,7 @@ id       = "chikari"
 name     = "Chikari Novel"
 version  = "1.0.11"
 baseUrl  = "https://chikari.moe/"
-language = "en"
+language = {"en", "es", "fr"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/chikari.png"
 
 -- Text novels on chikari.moe. The shared engine lives in

@@ -3,7 +3,7 @@ id       = "shuba69"
 name     = "69shuba"
 version  = "1.0.4"
 baseUrl  = "https://www.69shuba.com/"
-language = "zh"
+language = {"zh", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/69shuba.png"
 charset  = "GBK"
 

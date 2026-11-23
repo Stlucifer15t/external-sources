@@ -4,7 +4,7 @@ name         = "Mangalik"
 -- Version: 1.0.1
 version      = "1.0.1"
 baseUrl      = "https://mangalik.net/"
-language     = "ar"
+language = {"ar", "en"}
 content_type = "manga"
 icon         = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/mangalik.png"
 

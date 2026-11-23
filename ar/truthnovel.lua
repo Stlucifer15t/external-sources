@@ -2,7 +2,7 @@ id       = "truthnovel"
 name     = "Truth Novel"
 version  = "1.1.3"
 baseUrl  = "https://truthnovel.top"
-language = "ar"
+language = {"ar", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/truthnovel.png"
 
 -- Old builds ship no require_lib: keep the plugin loadable (a top-level error

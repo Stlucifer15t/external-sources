@@ -6,7 +6,7 @@ id       = "ranobespace"
 name     = "Ranobe.space"
 version  = "1.2.0"
 baseUrl  = "https://ranobe.space/"
-language = "ru"
+language = {"ru", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/ranobespace.png"
 
 local CONFIG = {

@@ -3,7 +3,7 @@ id       = "bookhamster"
 name     = "Bookhamster"
 version  = "1.2.1"
 baseUrl  = "https://bookhamster.ru/"
-language = "ru"
+language = {"ru", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/bookhamster.png"
 
 -- ── Хелперы ───────────────────────────────────────────────────────────────────

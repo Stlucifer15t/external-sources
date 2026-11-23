@@ -3,7 +3,7 @@ id       = "novelhi"
 name     = "NovelHi"
 version  = "1.1.1"
 baseUrl  = "https://novelhi.com"
-language = "en"
+language = {"en", "es", "fr"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/novelhi.png"
 
 -- =====================================================================

@@ -3,7 +3,7 @@ id       = "syosetu18"
 name     = "Syosetu R18"
 version  = "1.0.0"
 baseUrl  = "https://novel18.syosetu.com/"
-language = "ja"
+language = {"ja", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/narou.png"
 
 -- 18+ section of Syosetu (ノクターンノベルズ). Works live on

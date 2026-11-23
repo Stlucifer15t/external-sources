@@ -2,7 +2,7 @@ id       = "freewebnovel"
 name     = "FreeWebNovel"
 version  = "1.1.1"
 baseUrl  = "https://freewebnovel.com"
-language = "en"
+language = {"en", "es", "fr"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/freewebnovel.png"
 
 -- Old builds ship no require_lib: keep the plugin loadable (a top-level error

@@ -6,7 +6,7 @@ id       = "novelfire"
 name     = "NovelFire"
 version  = "1.1.0"
 baseUrl  = "https://novelfire.net"
-language = "en"
+language = {"en", "es", "fr"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/novelfire.png"
 
 local CONFIG = {

@@ -3,7 +3,7 @@ id       = "faqwiki"
 name     = "FAQ Wiki"
 version  = "1.6.7"
 baseUrl  = "https://faqwiki.us/novel"
-language = "en"
+language = {"en", "es", "fr"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/faqwiki.png"
 
 -- ── Helpers ───────────────────────────────────────────────────────────────────

@@ -3,7 +3,7 @@ id       = "ttkan"
 name     = "TTKan"
 version  = "1.1.2"
 baseUrl  = "https://www.ttkan.co/"
-language = "zh"
+language = {"zh", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/ttkan.png"
 
 -- ── Changelog (1.0.0 → 1.1.0) ───────────────────────────────────────────────

@@ -3,7 +3,7 @@ id       = "wcshuba"
 name     = "Wucuo Shuba"
 version  = "1.0.0"
 baseUrl  = "https://www.wcshuba.com/"
-language = "zh"
+language = {"zh", "en"}
 charset  = "UTF-8"
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/wcshuba.png"
 

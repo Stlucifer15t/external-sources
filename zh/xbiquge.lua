@@ -3,7 +3,7 @@ id       = "xbiquge"
 name     = "XBiquge"
 version  = "1.0.4"
 baseUrl  = "https://www.xbiquge.info/"
-language = "zh"
+language = {"zh", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/xbiquge.png"
 
 -- ── Changelog (1.0.0 → 1.0.1) ───────────────────────────────────────────────

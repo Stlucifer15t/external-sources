@@ -2,7 +2,7 @@ id       = "galaxynovels"
 name     = "Galaxy Novels"
 version  = "1.0.1"
 baseUrl  = "https://galaxynovels.com/"
-language = "ar"
+language = {"ar", "en"}
 icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/main/icons/galaxynovels.png"
 
 -- ── Хелперы ───────────────────────────────────────────────────────────────
