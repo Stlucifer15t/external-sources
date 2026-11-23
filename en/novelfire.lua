@@ -42,6 +42,7 @@ function getBookCoverImageUrl(bookUrl) return F().getBookCoverImageUrl(CONFIG, b
 function getBookDescription(bookUrl) return F().getBookDescription(CONFIG, bookUrl) end
 function getBookGenres(bookUrl) return F().getBookGenres(CONFIG, bookUrl) end
 function getBookRating(bookUrl) return F().getBookRating(CONFIG, bookUrl) end
+function getBookReviews(bookUrl, index) return F().getBookReviews(CONFIG, bookUrl, index) end
 function getBookStatus(bookUrl) return F().getBookStatus(CONFIG, bookUrl) end
 function getBookLastUpdate(bookUrl) return F().getBookLastUpdate(CONFIG, bookUrl) end
 

@@ -269,6 +269,56 @@ function M.getBookRating(config, bookUrl)
     return el and string_clean(el.text) or nil
 end
 
+-- ── Reviews ──────────────────────────────────────────────────────────
+
+-- Book reviews live on /book/{slug}/reviews, verified against a real page
+-- (sample: "the-death-mage-who-doesnt-want-a-fourth-time", 21 reviews,
+-- fetched 2026-11-23).
+function M.getBookReviews(config, bookUrl, index)
+    local page = index + 1
+    local reviewsUrl = regex_replace(bookUrl, "/+$", "") .. "/reviews?page=" .. tostring(page)
+    local r = http_get(reviewsUrl)
+    if not r.success then
+        return { items = {}, hasNext = false }
+    end
+    local items = {}
+    for _, el in ipairs(html_select(r.body, ".review-item")) do
+        local revId = html_attr(el.html, "[data-revid]", "data-revid")
+        if revId == "" then
+            revId = el.html:match('data%-revid="([^"]+)"') or ""
+        end
+        if revId ~= "" then
+            local authorEl = html_select_first(el.html, ".user-info strong[itemprop='name']")
+            local author = authorEl and string_clean(authorEl.text) or ""
+
+            local rating = html_attr(el.html, ".user-rating[data-rating]", "data-rating") or ""
+
+            local timeEl = html_select_first(el.html, ".review-date")
+            local time = timeEl and string_clean(timeEl.text) or ""
+
+            local contentEl = html_select_first(el.html, "[itemprop='reviewBody']")
+            local content = contentEl and string_clean(html_text(contentEl.html)) or ""
+
+            if content ~= "" then
+                local likesEl = html_select_first(el.html, ".like-button span")
+                local likes = likesEl and tonumber(string_clean(likesEl.text)) or 0
+
+                local item = {
+                    id     = revId,
+                    author = author,
+                    time   = time,
+                    content = content,
+                    likes  = likes,
+                }
+                if rating ~= "" then item.rating = rating end
+
+                table.insert(items, item)
+            end
+        end
+    end
+    return { items = items, hasNext = #items > 0 }
+end
+
 -- ── Status / last update ────────────────────────────────────────────
 
 -- Status: <strong class="completed">Completed</strong> inside the block
