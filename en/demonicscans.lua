@@ -710,10 +710,39 @@ function getChapterListHash(bookUrl)
   return tostring(count)
 end
 
--- ── Chapter text (image-based manga) ────────────────────────────────────────
+-- ── Chapter pages (image-based manga) ──────────────────────────────────────
+-- Demonic Scans serves chapter pages as <img> tags pointing at the
+-- cdn2.demoniclibs.com CDN, e.g.
+--   https://cdn2.demoniclibs.com/<Title>/<chapter>./<N>.jpg
+-- The chapter URL (chaptered.php?manga=<id>&chapter=<n>) redirects to
+-- /title/<slug>/chapter/<n>/1; the engine follows redirects by default, so
+-- the HTML passed here is the final reader page with all page images.
+local CDN_HOST = "cdn2.demoniclibs.com"
+
+local function chapterImages(html)
+  local pages = {}
+  for _, img in ipairs(html_select(html, 'img[src*="' .. CDN_HOST .. '"]')) do
+    local src = img.src
+    if not src or src == "" then src = img:attr("data-src") end
+    if src and src ~= "" then
+      table.insert(pages, src)
+    end
+  end
+  return pages
+end
+
+function getPageList(html, url)
+  return chapterImages(html)
+end
 
 function getChapterText(html, url)
-  return ""
+  local pages = chapterImages(html)
+  if #pages == 0 then return "" end
+  local imgs = {}
+  for _, src in ipairs(pages) do
+    table.insert(imgs, '<img src="' .. src .. '">')
+  end
+  return table.concat(imgs, "\n")
 end
 
 -- ── Reviews ─────────────────────────────────────────────────────────────────
