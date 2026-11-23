@@ -4,7 +4,7 @@ version  = "1.0.0"
 baseUrl  = "https://demonicscans.org"
 language = {"en", "es", "fr"}
 content_type = "manga"
-icon     = "https://raw.githubusercontent.com/HnDK0/external-sources/refs/heads/v2/icons/demonicscans.png"
+icon     = "https://raw.githubusercontent.com/Stlucifer15t/external-sources/refs/heads/v2/icons/doujinhentai.png"
 
 -- ── Shared libs ─────────────────────────────────────────────────────────────
 
