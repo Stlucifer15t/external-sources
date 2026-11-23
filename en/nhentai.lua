@@ -544,7 +544,7 @@ version  = "1.0.0"
 baseUrl  = "https://nhentai.net/"
 language = {"en", "es", "fr"}
 content_type = "manga"
-icon     = "https://raw.githubusercontent.com/Stlucifer15t/external-sources/refs/heads/main/icons/doujinhentai.png"
+icon     = "https://raw.githubusercontent.com/Stlucifer15t/external-sources/refs/heads/main/icons/nhentai.png"
 
 -- ── Shared libs ─────────────────────────────────────────────────────────────
 
@@ -748,6 +748,8 @@ end
 --   https://i1.nhentai.net/galleries/<media_id>/<n>.webp
 -- The image host subdomain (i1..i4) is a CDN edge; the exact URL is present
 -- in the reader page HTML, so we extract it directly rather than guessing.
+-- The engine may pass empty HTML, so when no image is found we fetch the
+-- reader page ourselves.
 local IMAGE_HOST = "nhentai.net/galleries/"
 
 local function readerImages(html)
@@ -762,16 +764,30 @@ local function readerImages(html)
   return pages
 end
 
+-- Resolve the reader HTML: use the engine-passed html if it has an image,
+-- otherwise fetch the chapter URL ourselves.
+local function readerHtml(html, url)
+  local body = html or ""
+  if #readerImages(body) == 0 and url and url ~= "" then
+    local r = http_get(url)
+    if r and r.success and r.body then
+      body = r.body
+    end
+  end
+  return body
+end
+
 function getPageList(html, url)
-  return readerImages(html)
+  return readerImages(readerHtml(html, url))
 end
 
 function getChapterText(html, url)
-  local pages = readerImages(html)
+  local pages = readerImages(readerHtml(html, url))
   if #pages == 0 then return "" end
   local imgs = {}
   for _, src in ipairs(pages) do
-    table.insert(imgs, '<img src="' .. src .. '">')
+    -- & → &amp;: the HTML parser decodes attributes when reading <img>
+    table.insert(imgs, '<img src="' .. src:gsub("&", "&amp;") .. '">')
   end
   return table.concat(imgs, "\n")
 end
