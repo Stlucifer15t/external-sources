@@ -1,6 +1,6 @@
 id       = "demonicscans"
 name     = "Demonic Scans"
-version  = "1.0.0"
+version  = "1.0.1"
 baseUrl  = "https://demonicscans.org"
 language = {"en", "es", "fr"}
 content_type = "manga"
@@ -70,9 +70,20 @@ function getCatalogList(index)
   for _, a in ipairs(html_select(r.body, 'a[href^="/manga/"]')) do
     local title = string_clean(a.title or a.text)
     if title ~= "" then
+      -- The cover <img> sits inside the manga link itself (verified live
+      -- 2026-11-25): <a href="/manga/..."><img src="https://readermc.org/
+      -- images/thumbnails/....jpg" title="..." alt="..."></a>
+      local cover = ""
+      local img = html_select_first(a.html, "img")
+      if img then
+        local src = img.src
+        if src == "" then src = img:attr("data-src") or "" end
+        cover = absUrl(src)
+      end
       table.insert(items, {
         title = title,
         url   = absUrl(a.href),
+        cover = cover,
       })
     end
   end

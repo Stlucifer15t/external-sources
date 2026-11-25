@@ -1,6 +1,6 @@
 id       = "nhentai"
 name     = "nhentai"
-version  = "1.0.0"
+version  = "1.0.1"
 baseUrl  = "https://nhentai.net/"
 language = {"en", "es", "fr"}
 content_type = "manga"
@@ -58,9 +58,20 @@ function getCatalogList(index)
       local title = titleEl and string_clean(titleEl.text) or string_clean(a.text)
       if title == "" then title = string_clean(a.title or "") end
       if title ~= "" then
+        -- The cover <img> sits inside the gallery link (verified live
+        -- 2026-11-25): <a href="/g/{id}/" class="cover">…<img class="lazyload"
+        -- src="https://t4.nhentai.net/galleries/…/thumb.webp">…
+        local cover = ""
+        local img = html_select_first(a.html, "img")
+        if img then
+          local src = img.src
+          if src == "" then src = img:attr("data-src") or "" end
+          cover = absUrl(src)
+        end
         table.insert(items, {
           title = title,
           url   = absUrl(a.href),
+          cover = cover,
         })
       end
     end
@@ -84,9 +95,17 @@ function getCatalogSearch(index, query)
       local title = titleEl and string_clean(titleEl.text) or string_clean(a.text)
       if title == "" then title = string_clean(a.title or "") end
       if title ~= "" then
+        local cover = ""
+        local img = html_select_first(a.html, "img")
+        if img then
+          local src = img.src
+          if src == "" then src = img:attr("data-src") or "" end
+          cover = absUrl(src)
+        end
         table.insert(items, {
           title = title,
           url   = absUrl(a.href),
+          cover = cover,
         })
       end
     end
