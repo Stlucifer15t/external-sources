@@ -1,6 +1,6 @@
 id       = "demonicscans"
 name     = "Demonic Scans"
-version  = "1.0.1"
+version  = "1.0.2"
 baseUrl  = "https://demonicscans.org"
 language = {"en", "es", "fr"}
 content_type = "manga"
@@ -21,6 +21,23 @@ end
 
 local function absUrl(href)
   return LIB("urls").absUrl(baseUrl, href)
+end
+
+-- readermc.org thumbnails keep raw spaces and apostrophes in their paths
+-- ("The World's Best Kunlun Tavern.jpg"); OkHttp refuses to request such a
+-- URL, so the path must be percent-encoded (verified live 2026-11-25).
+-- Scheme, host and "/" stay as they are; everything unsafe in the path
+-- becomes %XX.
+local function encodeImagePath(u)
+  if type(u) ~= "string" then return u end
+  local scheme, rest = u:match("^(https?://)(.*)$")
+  if not scheme then return u end
+  local host, path = rest:match("^([^/]*)(/.*)$")
+  if not host then return u end
+  path = path:gsub("[^%w%-%._~/]", function(c)
+    return string.format("%%%02X", string.byte(c))
+  end)
+  return scheme .. host .. path
 end
 
 -- Extract manga slug from /manga/{slug} URL.
@@ -83,7 +100,7 @@ function getCatalogList(index)
       table.insert(items, {
         title = title,
         url   = absUrl(a.href),
-        cover = cover,
+        cover = encodeImagePath(cover),
       })
     end
   end
@@ -117,7 +134,7 @@ function getBookCoverImageUrl(bookUrl)
   if src == "" then
     src = html_attr(body, ".manga-info img, .series-info img", "src")
   end
-  return src ~= "" and absUrl(src) or nil
+  return src ~= "" and encodeImagePath(absUrl(src)) or nil
 end
 
 function getBookDescription(bookUrl)
@@ -181,10 +198,23 @@ function getChapterListHash(bookUrl)
   return tostring(count)
 end
 
--- ── Chapter text (image-based manga) ────────────────────────────────────────
+-- ── Chapter pages (image-based manga) ───────────────────────────────────────
 
-function getChapterText(html, url)
-  return ""
+-- chaptered.php redirects to /title/{slug}/chapter/{c}/{p}, where every page
+-- renders as <img class="imgholder" src="https://mangareadon.org/...">. The
+-- site's own promo banner is also .imgholder but its src is site-relative
+-- (/img/free_ads.jpg), so only absolute URLs count as page images
+-- (verified live 2026-11-25).
+function getPageList(html, url)
+  local pages = {}
+  for _, img in ipairs(html_select(html, "img.imgholder")) do
+    local src = img.src
+    if src == "" then src = img:attr("data-src") or "" end
+    if src:find("^https?://") then
+      table.insert(pages, src)
+    end
+  end
+  return pages
 end
 
 -- ── Reviews ─────────────────────────────────────────────────────────────────

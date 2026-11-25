@@ -1,6 +1,6 @@
 id       = "nhentai"
 name     = "nhentai"
-version  = "1.0.1"
+version  = "1.0.2"
 baseUrl  = "https://nhentai.net/"
 language = {"en", "es", "fr"}
 content_type = "manga"
@@ -221,10 +221,18 @@ function getChapterListHash(bookUrl)
   return tostring(data.num_pages or 0) .. "|" .. tostring(data.upload_date or "")
 end
 
--- ── Chapter text (nhentai pages are images; no text) ────────────────────────
+-- ── Chapter pages (nhentai pages are images) ────────────────────────────────
 
-function getChapterText(html, url)
-  return ""
+-- Each /g/{gid}/{n}/ page renders its image inside #image-container
+-- (verified live 2026-11-25: <img … src="https://i3.nhentai.net/galleries/…/1.webp">).
+-- One image per "chapter" — the plugin maps gallery pages to chapters.
+function getPageList(html, url)
+  local img = html_select_first(html, "#image-container img")
+  if not img then return {} end
+  local src = img.src
+  if src == "" then src = img:attr("data-src") or "" end
+  if src == "" then return {} end
+  return { absUrl(src) }
 end
 
 -- ── Reviews ─────────────────────────────────────────────────────────────────

@@ -26,7 +26,7 @@ sources:
     requires: ["chikari"]
   - id: "demonicscans"
     name: "Demonic Scans"
-    version: "1.0.1"
+    version: "1.0.2"
     url: "https://raw.githubusercontent.com/Stlucifer15t/external-sources/refs/heads/v2/en/demonicscans.lua"
     icon: "https://raw.githubusercontent.com/Stlucifer15t/external-sources/refs/heads/v2/icons/demonicscans.png"
     language: ["en", "es", "fr"]
@@ -78,7 +78,7 @@ sources:
     requires: ["catalog"]
   - id: "nhentai"
     name: "nhentai"
-    version: "1.0.1"
+    version: "1.0.2"
     url: "https://raw.githubusercontent.com/Stlucifer15t/external-sources/refs/heads/v2/en/nhentai.lua"
     icon: "https://raw.githubusercontent.com/Stlucifer15t/external-sources/refs/heads/v2/icons/nhentai.png"
     language: ["en", "es", "fr"]
